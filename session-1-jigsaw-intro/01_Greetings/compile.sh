@@ -1,16 +1,16 @@
 #!/bin/bash
 
-source ../../common-functions.sh
+#source ../../common-functions.sh
 
-COM_GREETINGS_FOLDER="mods/com.greetings"
+#COM_GREETINGS_FOLDER="mods/com.greetings"
 
-runTree src
+#runTree src
 
-echo ""
-echo "${info} *** Displaying the contents (source files) of the 'src' folder *** ${normal}"	
+#echo ""
+#echo "${info} *** Displaying the contents (source files) of the 'src' folder *** ${normal}"
 
-echo ""
-echo "${info} *** Compiling modules in '$COM_GREETINGS_FOLDER' *** ${normal}"
+#echo ""
+#echo "${info} *** Compiling modules in '$COM_GREETINGS_FOLDER' *** ${normal}"
 
 
 # *******************************************************************************************************************************
@@ -20,8 +20,8 @@ echo "${info} *** Compiling modules in '$COM_GREETINGS_FOLDER' *** ${normal}"
 #
 # The compiler creates the 'mods' folder, if it does not exist already and places compiled modules into them.
 
-javac --module-path mods \
-      -d $COM_GREETINGS_FOLDER \
+/Users/oleg/dev/jdk-9.jdk/Contents/Home/bin/javac --module-path mods \
+      -d mods/com.greetings \
       src/com.greetings/module-info.java \
       src/com.greetings/com/greetings/Main.java
 
@@ -35,10 +35,9 @@ javac --module-path mods \
 # *******************************************************************************************************************************
 
 
-echo ""
-echo "${info} *** Finished compiling modules into the '$COM_GREETINGS_FOLDER' folder *** ${normal}"
+#echo ""
+#echo "${info} *** Finished compiling modules into the '$COM_GREETINGS_FOLDER' folder *** ${normal}"
 
-echo ""
-echo "${info} *** Displaying the contents (compiled modules) of the '$COM_GREETINGS_FOLDER' folder *** ${normal}"
-runTree "$COM_GREETINGS_FOLDER"
-
+#echo ""
+#echo "${info} *** Displaying the contents (compiled modules) of the '$COM_GREETINGS_FOLDER' folder *** ${normal}"
+#runTree "$COM_GREETINGS_FOLDER"
