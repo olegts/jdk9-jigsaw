@@ -1,13 +1,13 @@
 #!/bin/bash
 
-set -eu
+#set -eu
 
-source ../../common-functions.sh
+#source ../../common-functions.sh
 
-echo ""
-echo "${info} *** Running 'com.greetings.Main' from within the module package in the 'mlib' folder (running 'org.astro.World' from within the module package in the 'mlib' folder) *** ${normal}"
-echo 
-java --module-path mlib \
+#echo ""
+#echo "${info} *** Running 'com.greetings.Main' from within the module package in the 'mlib' folder (running 'org.astro.World' from within the module package in the 'mlib' folder) *** ${normal}"
+#echo
+/Users/oleg/dev/jdk-9.jdk/Contents/Home/bin/java --module-path mlib \
      --module com.greetings
 
 # See ../01_Greetings/run.sh for explanations to above commands

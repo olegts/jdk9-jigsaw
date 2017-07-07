@@ -1,52 +1,52 @@
 #!/bin/bash
 
-set -eu
+#set -eu
 
-source ../../common-functions.sh
+#source ../../common-functions.sh
 
-echo ""
-echo "${info} *** Creating folder 'mlib' for the packages (jar files) to be created *** ${normal}"
+#echo ""
+#echo "${info} *** Creating folder 'mlib' for the packages (jar files) to be created *** ${normal}"
 mkdir -p mlib              # this must be created in order for the jar commands below to be successful
 
-echo ""
-echo "${info} *** Creating module org.astro as a package file (jar) *** ${normal}"
-jar --create \
-    --file mlib/org.astro@1.0.jar \
+#echo ""
+#echo "${info} *** Creating module org.astro as a package file (jar) *** ${normal}"
+/Users/oleg/dev/jdk-9.jdk/Contents/Home/bin/jar --create \
+  --file mlib/org.astro@1.0.jar \
 	--module-version 1.0 \
 	-C mods/org.astro .
 
-echo ""
-echo "${info} *** Creating module com.greetings as a package file (jar) *** ${normal}"
-jar --create \
+#echo ""
+#echo "${info} *** Creating module com.greetings as a package file (jar) *** ${normal}"
+/Users/oleg/dev/jdk-9.jdk/Contents/Home/bin/jar --create \
     --file mlib/com.greetings.jar \
 	--main-class=com.greetings.Main \
 	-C mods/com.greetings .
 
-echo ""
-echo "${info} *** Displaying the contents (package files created) of the 'mlib' folder *** ${normal}"
-runTree mlib
+#echo ""
+#echo "${info} *** Displaying the contents (package files created) of the 'mlib' folder *** ${normal}"
+#runTree mlib
 
-echo ""
-echo "${info} *** Printing module description for org.astro as recorded in the module-info.class file in the package (jar) *** ${normal}"
-jar --verbose \
+#echo ""
+#echo "${info} *** Printing module description for org.astro as recorded in the module-info.class file in the package (jar) *** ${normal}"
+/Users/oleg/dev/jdk-9.jdk/Contents/Home/bin/jar --verbose \
     --describe-module \
     --file=mlib/org.astro@1.0.jar
 
-    echo ""
-echo "${info} *** Displaying contents of the module package org.astro@1.0 *** ${normal}"
-jar --verbose \
+#echo ""
+#echo "${info} *** Displaying contents of the module package org.astro@1.0 *** ${normal}"
+/Users/oleg/dev/jdk-9.jdk/Contents/Home/bin/jar --verbose \
     --list \
     --file=mlib/org.astro@1.0.jar
 
-echo ""
-echo "${info} *** Printing module description for com.greetings as recorded in the module-info.class file in the package (jar) *** ${normal}"
-jar --verbose \
+#echo ""
+#echo "${info} *** Printing module description for com.greetings as recorded in the module-info.class file in the package (jar) *** ${normal}"
+/Users/oleg/dev/jdk-9.jdk/Contents/Home/bin/jar --verbose \
     --describe-module \
     --file=mlib/com.greetings.jar
 
-    echo ""
-echo "${info} *** Displaying contents of the module package com.greetings *** ${normal}"
-jar --verbose \
+#echo ""
+#echo "${info} *** Displaying contents of the module package com.greetings *** ${normal}"
+/Users/oleg/dev/jdk-9.jdk/Contents/Home/bin/jar --verbose \
     --list \
     --file=mlib/com.greetings.jar
 
