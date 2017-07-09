@@ -1,12 +1,13 @@
 #!/bin/bash
 
-set -eu
+#set -eu
 
-source ../../common-functions.sh
+#source ../../common-functions.sh
 
-echo 
-echo "${info} *** Running 'com.greetings.Main' from within the mods folder. *** ${normal}"
-echo "${info} *** Will fail because 'org.astro' and 'org.astro2' packages are exporting the same module 'org.astro'. *** ${normal}"
-echo 
-java --module-path mods \
+#echo
+#echo "${info} *** Running 'com.greetings.Main' from within the mods folder. *** ${normal}"
+#echo "${info} *** Will fail because 'org.astro' and 'org.astro2' packages are exporting the same module 'org.astro'. *** ${normal}"
+#echo
+/Users/oleg/dev/jdk-9.jdk/Contents/Home/bin/java \
+     --module-path mods \
      --module com.greetings/com.greetings.Main
