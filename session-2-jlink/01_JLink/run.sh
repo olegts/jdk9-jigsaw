@@ -1,8 +1,8 @@
 #!/bin/bash
 
-set -eu
+#set -eu
 
-source ../../common-functions.sh
+#source ../../common-functions.sh
 
 echo
 echo "${info} *** Running 'com.greetings.Main' from the module 'com.greetings' using the java in the 'executable' folder *** ${normal}"
